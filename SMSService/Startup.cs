@@ -7,9 +7,9 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using SMSService.Providers;
+using Mitto.SMSService.Providers;
 
-namespace SMSService
+namespace Mitto.SMSService
 {
     public class Startup
     {

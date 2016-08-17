@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SMSService.Models
+namespace Mitto.SMSService.Models
 {
     public class Country
     {

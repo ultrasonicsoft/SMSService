@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using SMSService.Models;
+using Mitto.SMSService.Models;
 
-namespace SMSService.Providers
+namespace Mitto.SMSService.Providers
 {
     public interface ICountryProvider
     {

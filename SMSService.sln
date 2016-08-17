@@ -5,6 +5,14 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SMSService", "SMSService\SMSService.xproj", "{D67A2F68-95C3-455B-AA74-93B1CAD49823}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{737C6B79-9A7B-47A2-BB4B-5D56C47BCA6D}"
+	ProjectSection(SolutionItems) = preProject
+		SMSService\global.json = SMSService\global.json
+		SmsDbManager\global.json = SmsDbManager\global.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsDbManager", "SmsDbManager\SmsDbManager.csproj", "{AD3B97D6-B3C4-4653-A018-E71757B1EC54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,10 @@ Global
 		{D67A2F68-95C3-455B-AA74-93B1CAD49823}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D67A2F68-95C3-455B-AA74-93B1CAD49823}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D67A2F68-95C3-455B-AA74-93B1CAD49823}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD3B97D6-B3C4-4653-A018-E71757B1EC54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD3B97D6-B3C4-4653-A018-E71757B1EC54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD3B97D6-B3C4-4653-A018-E71757B1EC54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD3B97D6-B3C4-4653-A018-E71757B1EC54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

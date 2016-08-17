@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using SMSService.Models;
+using Mitto.SMSService.Models;
 
-namespace SMSService.Providers
+namespace Mitto.SMSService.Providers
 {
     public class CountryProvider : ICountryProvider
     {
