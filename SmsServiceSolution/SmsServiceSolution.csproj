@@ -82,6 +82,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database Script\GenerateDatabase.sql" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -95,16 +96,11 @@
     <Compile Include="Helper\SmsBuilder.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Sms.cs" />
-    <Compile Include="Models\SmsParams.cs" />
     <Compile Include="Models\SmsSearchCriteria.cs" />
     <Compile Include="Models\SmsSearchResult.cs" />
     <Compile Include="Models\SmsStatisticsParams.cs" />
     <Compile Include="Models\SmsStatisticsRecord.cs" />
-    <Compile Include="Models\State.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Providers\SmsProvider\ISmsProvider.cs" />
-    <Compile Include="Providers\SmsProvider\MockSmsProvider.cs" />
-    <Compile Include="SmsDbManager\DbOperator.cs" />
     <Compile Include="SmsDbManager\ISmsDbProvider.cs" />
     <Compile Include="SmsDbManager\SmsDbProvider.cs" />
   </ItemGroup>
@@ -119,6 +115,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmsServiceProvider\SmsServiceProvider.csproj">
+      <Project>{7c2b79f9-2251-43be-8341-4ee8c062ceb6}</Project>
+      <Name>SmsServiceProvider</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

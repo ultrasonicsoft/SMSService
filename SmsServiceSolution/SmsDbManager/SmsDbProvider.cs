@@ -17,7 +17,6 @@ namespace Mitto.SMSService.DbProvider
         public SmsDbProvider(string connectionString)
         {
             this.connectionString = connectionString;
-            //            this.connectionString = "server=127.0.0.1;uid=root; pwd=root;database=mitto_sms_db;";
         }
 
         public IList<Country> GetAllCountries()
