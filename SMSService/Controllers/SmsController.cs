@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using Microsoft.Extensions.Logging;
+using Mitto.SMSService.DbProvider;
 using Mitto.SMSService.Models;
 using Mitto.SMSService.Providers;
 
@@ -14,11 +15,20 @@ namespace Mitto.SMSService.Controllers
     {
         ILogger logger;
         private readonly ICountryProvider countryProvider;
-        public SmsController(ICountryProvider countryProvider, ILoggerFactory loggerFactory)
+        private readonly ISmsProvider smsProvider;
+        private readonly ISmsBuilder smsBuilder;
+        private readonly ISmsDbProvider smsDbProvider;
+
+        public SmsController(ICountryProvider countryProvider, ISmsProvider smsProvider,
+            ISmsBuilder smsBuilder, ISmsDbProvider smsDbProvider, ILoggerFactory loggerFactory)
         {
             //Logger: logs information in console window.
             logger = loggerFactory.CreateLogger("SmsControllerLogger");
+
             this.countryProvider = countryProvider;
+            this.smsProvider = smsProvider;
+            this.smsBuilder = smsBuilder;
+            this.smsDbProvider = smsDbProvider;
         }
 
         [HttpGet("countries.json")]
@@ -34,6 +44,15 @@ namespace Mitto.SMSService.Controllers
             logger.LogInformation("SendSMS request received.");
             var smsDetails = string.Format("From: {0}, To: {1}, Message Text: {2}", from, to, text);
             logger.LogInformation("SMS Details: "+ smsDetails);
+
+            logger.LogDebug("Composing new SMS...");
+            var newSms = smsBuilder.ComposeSms(from, to, text);
+
+            logger.LogDebug("Storing new SMS in database...");
+            smsDbProvider.StoreSms(newSms);
+
+            logger.LogDebug("Sending new SMS...");
+            var status = smsProvider.SendSms(newSms);
 
             return State.Success;
         }

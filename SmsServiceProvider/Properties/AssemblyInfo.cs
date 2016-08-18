@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SmsDbManager")]
+[assembly: AssemblyTitle("SmsServiceProvider")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SmsDbManager")]
+[assembly: AssemblyProduct("SmsServiceProvider")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ad3b97d6-b3c4-4653-a018-e71757b1ec54")]
+[assembly: Guid("7c2b79f9-2251-43be-8341-4ee8c062ceb6")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -7,6 +7,7 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Mitto.SMSService.DbProvider;
 using Mitto.SMSService.Providers;
 
 namespace Mitto.SMSService
@@ -29,7 +30,11 @@ namespace Mitto.SMSService
         {
             // Add framework services.
             services.AddMvc();
+
             services.Add(new ServiceDescriptor(typeof(ICountryProvider),new CountryProvider()));
+            services.Add(new ServiceDescriptor(typeof(ISmsProvider),new MockSmsProvider()));
+            services.Add(new ServiceDescriptor(typeof(ISmsBuilder),new SmsBuilder()));
+            services.Add(new ServiceDescriptor(typeof(ISmsDbProvider),new SmsDbProvider()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
